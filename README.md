@@ -2,6 +2,8 @@
 
 This is a reproduction of an timeout error that occurs while using `@testing-library/react-native` and combining `testEnvironment: 'jsdom'` and fake timers, regardless of "legacy" or "modern" timers. The result is the following error. It would appear that `setImmediate` does not perform as expected, breaking the built-in [`cleanup` functionality](https://github.com/callstack/react-native-testing-library/blob/c42bae123d69375e27b94ff0329380a13e31e87b/src/index.js#L13) of `@testing-library/react-native`.
 
+<details><summary>Error Details</summary>
+
 ```
 > rntl-jsdom-fake-timers@0.0.1 test
 > jest
@@ -32,3 +34,10 @@ Snapshots:   0 total
 Time:        6.732 s
 Ran all test suites.
 ```
+
+</details>
+
+## Project Setup
+
+1. `npm install`
+1. `npm run test`
